@@ -5,7 +5,7 @@
 //  Created by Daniel Agustian Yoali on 24/02/26.
 //
 
-import SwiftUICore
+import SwiftUI
 
 struct TextPages:View {
     var body: some View {

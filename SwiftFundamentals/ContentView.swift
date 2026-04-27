@@ -9,23 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var router = Router()
-    var body: some View {
+
+    var body: some View{
         NavigationStack (path: $router.navigationPath){
-            VStack(spacing: 20){
-                Text("Home Page")
-                    .font(.title)
-                Button(action: {
-                    router.navigate(to: .textPage)
-                }) {
-                    Text("Go to Text Page")
+            VStack{
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30).frame(width: 150 , height: 150).foregroundStyle(.tint)
+                    Image(systemName: "figure.2.and.child.holdinghands").font(.system(size: 85)).foregroundStyle(.white)
+
                 }
-                Button(action: {
-                    router.navigate(to: .weather)
-                }) {
-                    Text("Go to Weather Page")
-                }
-            }
-            .navigationTitle("Test")
+               
+                Text("Welcome to App")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top)
+                    .padding(.bottom, 10)
+                    
+                Text("Description text")
+                                .font(.title2)
+            }.padding()
             .navigationDestination(for: Routes.self) { route in
                 switch route {
                 case .home:
